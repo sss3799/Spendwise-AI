@@ -9,7 +9,7 @@ function Home() {
       <Header />
       <main className="flex-grow">
         <section className="text-center py-20 bg-gray-50">
-          <h2 className="text-4xl font-bold mb-4">Welcome to FinSight</h2>
+          <h2 className="text-4xl font-bold mb-4">Welcome to SpendWiseAI</h2>
           <p className="text-gray-600 mb-8">Gain quick insights from your financial data.</p>
           <a href="#upload" className="px-6 py-3 bg-blue-600 text-white rounded-md">Upload Your Financial Files</a>
         </section>
