@@ -1,12 +1,11 @@
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { MOCK_CHART_DATA } from "../constants";
 
-const data = [
-  { name: "Week 1", value: 400 },
-  { name: "Week 2", value: 300 },
-  { name: "Week 3", value: 350 },
-  { name: "Week 4", value: 500 },
-];
+const data = MOCK_CHART_DATA.map((d) => ({
+  name: d.month,
+  value: d.Marketing + d.Travel + d.Tech,
+}));
 
 function TrendChart() {
   return (

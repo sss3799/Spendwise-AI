@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { FunnelIcon } from "@heroicons/react/24/outline";
+import { MOCK_EXPENSE_DATA } from "../constants";
 
 function FilterDropdown({ onSelect }) {
-  const categories = ["All", "Marketing", "Travel", "Tech"];
+  const categories = ["All", ...MOCK_EXPENSE_DATA.map((d) => d.category)];
   const [value, setValue] = useState("All");
 
   const handleSelect = (category) => {

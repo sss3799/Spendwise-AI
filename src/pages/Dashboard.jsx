@@ -5,6 +5,7 @@ import InsightCard from "../components/InsightCard";
 import ExportButton from "../components/ExportButton";
 import FilterDropdown from "../components/FilterDropdown";
 import { useProcess } from "../context/ProcessContext";
+import { MOCK_INSIGHTS } from "../constants";
 
 function Dashboard() {
   const { isProcessed } = useProcess();
@@ -48,9 +49,9 @@ function Dashboard() {
             </div>
             <h2 className="text-lg font-semibold mt-8 mb-2">Insights</h2>
             <div className="grid md:grid-cols-3 gap-4">
-              <InsightCard text="You overspent in Tech by 32%" />
-              <InsightCard text="Marketing spend decreased 10%" />
-              <InsightCard text="Travel costs stable" />
+              {MOCK_INSIGHTS.map((text) => (
+                <InsightCard key={text} text={text} />
+              ))}
             </div>
           </>
         )}
