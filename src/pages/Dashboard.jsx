@@ -41,18 +41,19 @@ function Dashboard() {
               <FilterDropdown onSelect={setFilter} />
               <ExportButton />
             </div>
-            <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <h2 className="text-lg font-semibold mt-4 mb-2">Charts</h2>
+            <div className="grid md:grid-cols-2 gap-6">
               <ChartPanel type="donut" category={filter} />
               <ChartPanel type="bar" />
             </div>
-            <div className="mt-6 grid md:grid-cols-3 gap-4">
+            <h2 className="text-lg font-semibold mt-8 mb-2">Insights</h2>
+            <div className="grid md:grid-cols-3 gap-4">
               <InsightCard text="You overspent in Tech by 32%" />
               <InsightCard text="Marketing spend decreased 10%" />
               <InsightCard text="Travel costs stable" />
             </div>
           </>
         )}
-      </main>
     </div>
   );
 }
