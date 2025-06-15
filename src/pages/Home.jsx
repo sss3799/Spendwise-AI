@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 
