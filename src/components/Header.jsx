@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BanknotesIcon } from "@heroicons/react/24/outline";
+import DarkModeToggle from "./DarkModeToggle";
+          <DarkModeToggle />
 import PageContainer from "./PageContainer";
 
 

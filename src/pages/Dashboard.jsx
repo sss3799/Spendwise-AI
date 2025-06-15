@@ -2,14 +2,11 @@ import React, { useState, useEffect } from "react";
 import ToggleView from "../components/ToggleView";
 import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
-import PageContainer from "../components/PageContainer";
+import LoadingIndicator from "../components/LoadingIndicator";
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
 
-
-function Dashboard() {
-  const { isProcessed } = useProcess();
-  const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState("All");
-  useEffect(() => {
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+          <LoadingIndicator />
     const t = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(t);
   }, []);

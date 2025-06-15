@@ -17,7 +17,9 @@
     "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.0",
     "recharts": "^2.8.0",
-    "@radix-ui/react-dropdown-menu": "^2.1.15"
+    "@radix-ui/react-dropdown-menu": "^2.1.15",
+    "@radix-ui/react-switch": "^1.2.5",
+    "@radix-ui/react-progress": "^1.1.7"
   },
   "scripts": {
     "start": "react-scripts start",
