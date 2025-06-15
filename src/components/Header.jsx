@@ -4,7 +4,7 @@ import { BanknotesIcon } from "@heroicons/react/24/outline";
 
 function Header() {
   return (
-    <header className="bg-stone-50 border-b border-stone-200">
+    <header className="bg-white/80 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left Corner - Logo */}
         <Link to="/" className="flex items-center space-x-3 text-xl font-bold text-gray-800 hover:text-teal-600 transition-colors duration-200">

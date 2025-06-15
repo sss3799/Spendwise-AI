@@ -19,7 +19,7 @@ const COLORS = ["#60a5fa", "#10b981", "#facc15"];
 function ChartPanel({ type }) {
   if (type === "donut") {
     return (
-      <div className="h-64 p-4 border rounded">
+      <div className="h-64 p-4 border rounded-lg bg-white shadow">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie dataKey="value" data={dataPie} innerRadius={40} outerRadius={80}>
@@ -35,7 +35,7 @@ function ChartPanel({ type }) {
   }
 
   return (
-    <div className="h-64 p-4 border rounded">
+    <div className="h-64 p-4 border rounded-lg bg-white shadow">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={dataBar}>
           <XAxis dataKey="name" />
