@@ -1,118 +1,98 @@
-# Spendwise-AI – Developer Agent Instructions (Codex/Cursor Optimized for Modern UI)
+
+---
+
+## 🤖 `agents.md` (Updated with Vercel reference + modern stack)
+
+```md
+# Spendwise-AI – Developer Agent Instructions (Codex/Cursor + Vercel-aware)
 
 ## 🧠 Objective
 
-You are an AI development assistant helping build the **frontend-only MVP** of Spendwise-AI, a financial insights dashboard. Your focus is to generate clean, modern, and highly usable React components styled with **Tailwind CSS**, enhanced with **shadcn/ui**, and visualized using **Recharts**.
+You are an AI assistant helping build the frontend of **Spendwise-AI**, a solo-developed React dashboard app for financial insights.
 
-All backend functionality is mocked. All chart data and summaries are placeholder values from `constants.js`.
+🟢 Live version:  
+🔗 https://spendwise-ai-beta.vercel.app
+
+Use this link to visually align your code suggestions (especially layout, Tailwind utility choices, chart placement, and interactivity) to match what’s already built.
 
 ---
 
-## 🧱 Use These Libraries and Design Patterns
+## ✅ Design Stack (Use This)
 
-| Purpose | Library/Pattern |
-|--------|------------------|
-| UI Framework | React (Vite preferred) |
+| Area | Library |
+|------|---------|
 | Styling | Tailwind CSS |
-| Components | [shadcn/ui](https://ui.shadcn.com) |
-| Icons | [Heroicons](https://heroicons.com) |
+| Components | shadcn/ui |
+| Icons | Heroicons |
 | Charts | Recharts |
 | Animations | Framer Motion |
 | Routing | React Router DOM |
-| Data | Mocked in `constants.js` |
 
 ---
 
-## 🔥 UI/UX Rules
+## 📦 Key Component Types
 
-- Use **shadcn/ui components** (like `Card`, `Tabs`, `Switch`, `Button`, `DropdownMenu`) to structure clean UIs
-- Use **Tailwind spacing**, `rounded-2xl`, `shadow-md`, and `bg-muted/10` for soft, modern surfaces
-- Make pages **mobile-first responsive**
-- Use **grid or flex layouts** with gaps and section padding (`p-6`, `gap-4`, `grid-cols-2`, etc.)
-- Add **skeleton loaders** for file upload and dashboard transitions
-- Animate components with **Framer Motion**, especially for toggles or card transitions
-
----
-
-## 🔧 Components to Build (Use shadcn/ui + Tailwind)
-
-| Component | Notes |
-|----------|-------|
-| `FileUploader.jsx` | Use drag-and-drop zone with border-dashed, icon from Heroicons, and file preview list |
-| `InsightCard.jsx` | Use `Card` from shadcn with emoji/icon, bold stat, and short insight sentence |
-| `ChartPanel.jsx` | Use `ResponsiveContainer` from Recharts, support donut/bar views |
-| `ToggleView.jsx` | Use `Switch` or `Tabs` from shadcn to toggle view modes |
-| `FilterDropdown.jsx` | Use `DropdownMenu` from shadcn for category filters |
+| Component | Role |
+|----------|------|
+| `FileUploader.jsx` | Drag-drop UI with icon, preview list, and process button |
+| `InsightCard.jsx` | Shows one-line AI-style summary in a styled shadcn Card |
+| `ChartPanel.jsx` | Donut chart and bar chart visualizations with dummy data |
+| `ToggleView.jsx` | Tabs or Switch to toggle Aggregated/Individual view |
+| `FilterDropdown.jsx` | Dropdown to filter insights by category |
 
 ---
 
-## 🧠 Prompt Examples for You (Codex/Cursor)
+## 🔍 Agent Behavior
 
-You can use these sample prompts to instruct Codex:
-
-- "Create a drag-and-drop file uploader using Tailwind and Heroicons, styled with a dashed border and file preview"
-- "Use `Card` from shadcn/ui to show a financial insight like '⚠️ Marketing overspend: ₹12,000'"
-- "Add a donut chart from Recharts with static category data and legend on right"
-- "Create a Tabs-based switcher to toggle Aggregated vs Individual views"
-- "Use DropdownMenu from shadcn/ui to filter by category (Marketing, Tech, Travel)"
+1. Use shadcn/ui for layout components: `Card`, `Tabs`, `Switch`, `DropdownMenu`, etc.
+2. Use Tailwind utilities for responsiveness, spacing, shadow, and muted backgrounds.
+3. Use Heroicons SVGs inside interactive elements.
+4. Charts should use `ResponsiveContainer` in Recharts with labeled legends.
+5. Use Framer Motion for smooth UI transitions (e.g., toggling views or showing insights).
 
 ---
 
-## 🗂️ Project Folder Guidelines
+## 📘 Prompt Examples to Use
 
-src/
-│
-├── components/
-│ ├── FileUploader.jsx
-│ ├── ChartPanel.jsx
-│ ├── InsightCard.jsx
-│ ├── ToggleView.jsx
-│ └── FilterDropdown.jsx
-│
-├── pages/
-│ ├── Landing.jsx
-│ └── Dashboard.jsx
-│
-├── constants.js → holds MOCK_EXPENSE_DATA, MOCK_INSIGHTS
-├── App.jsx
-└── index.js
-
+- "Design a shadcn `Card` with a large emoji, bold category title, and short insight"
+- "Generate a donut chart using Recharts with 3 categories from MOCK_EXPENSE_DATA"
+- "Make a responsive drag-drop file uploader styled with Tailwind (no backend)"
+- "Create tabs from shadcn/ui to switch between Aggregated and Individual insights"
 
 ---
 
-## ⚠️ Out of Scope
+## 🔄 Navigation Flow
 
-- No real backend parsing
-- No OpenAI API integration
-- No login/auth
-- No Redux or global state for now
-
----
-
-## 🔮 Future Additions
-
-Once backend/API is added, you will:
-
-- Send uploaded files to an endpoint
-- Receive structured spend data
-- Display LLM-generated summaries dynamically
-
-But for now, focus on building **beautiful, mock-powered UI flows**.
+| Route | Behavior |
+|-------|----------|
+| `/` | Landing screen with welcome message, sample insights, and upload section |
+| `/dashboard` | Filterable, toggleable view of charts + summaries using dummy data |
 
 ---
 
-## ✅ Visual Guidance for Output
+## ⚠️ Don’t Implement Yet
 
-| Visual | Example |
-|--------|---------|
-| Upload | Drag-drop box with folder icon, hover glow |
-| Charts | Donut chart for spend by category, bar for monthly trends |
-| Insight Cards | “⚠️ Travel spend dropped 20%” inside shadcn `Card` |
-| Switch/Toggle | Tabs or switch from shadcn, labeled clearly |
-| Filters | Dropdown with categories + checkboxes |
+- File parsing
+- Real AI/LLM summarization
+- Upload endpoints
+- User login/auth
 
 ---
 
-By following these conventions, Codex/Cursor will output **modern, production-like UI** components suitable for your app’s branding and usability.
+## 🧠 Use Vercel Preview for Visual Sync
 
-Repo reference: [Spendwise-AI](https://github.com/syed0711/Spendwise-AI)
+Before generating UI:
+- Visit [https://spendwise-ai-beta.vercel.app](https://spendwise-ai-beta.vercel.app)
+- Review component alignment, spacing, visual language
+- Then suggest layout-aware JSX code with matching Tailwind classes
+
+---
+
+## 🔮 Future Extensions
+
+Later, you’ll:
+- Parse uploaded files with backend
+- Send data to LLM (OpenAI) and display insights dynamically
+- Introduce user auth, real-time charts, and reports
+
+Until then, help build a world-class **frontend experience** powered by mock data.
