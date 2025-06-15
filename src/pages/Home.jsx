@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
 import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 import PageContainer from "../components/PageContainer";
-import { useProcess } from "../context/ProcessContext";
 
 function Home() {
   const navigate = useNavigate();
@@ -27,8 +27,8 @@ function Home() {
   };
 
   return (
-    // Wrap entire page for consistent horizontal padding
-    <PageContainer className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
+      <Header />
       <main className="flex-grow">
         {/* Hero Section with Botanical Background */}
         <section className="min-h-screen relative bg-gradient-to-b from-slate-800 via-slate-700 to-slate-600 text-white overflow-hidden">
@@ -101,9 +101,9 @@ function Home() {
             </svg>
           </div>
           
-          {/* Content Container placed inside centered PageContainer */}
-          <PageContainer className="relative z-10 flex flex-col items-center justify-center min-h-screen py-12">
-            <div className="text-center">
+          {/* Content Container */}
+          <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-6">
+            <div className="max-w-2xl w-full text-center">
               <h1 className="text-5xl font-bold mb-6">
                 Welcome to <span className="text-yellow-300">SpendWiseAI</span>
               </h1>
@@ -128,7 +128,7 @@ function Home() {
               </div>
 
               {/* Feature Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              <div className="grid sm:grid-cols-3 gap-4 mt-12">
                 <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
@@ -166,12 +166,12 @@ function Home() {
                 </div>
               </div>
             </div>
-          </PageContainer>
+          </div>
         </section>
         
         {/* Examples Section */}
-        <section className="py-12 bg-gradient-to-b from-white via-purple-50 to-pink-50" id="examples">
-          <PageContainer>
+        <section className="py-20 bg-gradient-to-b from-white via-purple-50 to-pink-50" id="examples">
+          <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
               See What SpendWiseAI Can Do
             </h2>
@@ -198,10 +198,10 @@ function Home() {
                 <p className="text-gray-600 text-sm text-center">See how your expenses change over time</p>
               </div>
             </div>
-          </PageContainer>
+          </div>
         </section>
       </main>
-    </PageContainer>
+    </div>
   );
 }
 
