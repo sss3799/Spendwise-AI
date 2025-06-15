@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
 import { Link } from "react-router-dom";
+import ChartPanel from "../components/ChartPanel";
+import TrendChart from "../components/TrendChart";
 
 function Home() {
   return (
@@ -183,28 +185,22 @@ function Home() {
               See What SpendWiseAI Can Do
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="h-32 bg-blue-200 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-blue-600 font-semibold">Interactive Charts</span>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">Visual Analytics</h3>
-                <p className="text-gray-600 text-sm">Dynamic charts and graphs to visualize your spending patterns</p>
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <ChartPanel type="bar" />
+                <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Visual Analytics</h3>
+                <p className="text-gray-600 text-sm text-center">Dynamic charts to visualize your spending patterns</p>
               </div>
-              
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="h-32 bg-green-200 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-green-600 font-semibold">Marketing: $2,450</span>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">Smart Insights</h3>
-                <p className="text-gray-600 text-sm">AI identifies your highest spending categories automatically</p>
+
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <ChartPanel type="donut" />
+                <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Smart Insights</h3>
+                <p className="text-gray-600 text-sm text-center">AI highlights your highest spending categories</p>
               </div>
-              
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="h-32 bg-purple-200 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-purple-600 font-semibold">Save 15% Monthly</span>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">Actionable Tips</h3>
-                <p className="text-gray-600 text-sm">Get personalized recommendations to optimize your finances</p>
+
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <TrendChart />
+                <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Trend Analyzer</h3>
+                <p className="text-gray-600 text-sm text-center">See how your expenses change over time</p>
               </div>
             </div>
           </div>
