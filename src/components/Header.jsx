@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BanknotesIcon } from "@heroicons/react/24/outline";
+import PageContainer from "./PageContainer";
 
 function Header() {
   return (
     <header className="bg-gradient-to-r from-slate-700 to-gray-800 text-white shadow">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      {/* PageContainer keeps nav aligned with main content */}
+      <PageContainer className="flex justify-between items-center py-4">
         {/* Left Corner - Logo */}
         <Link
           to="/"
@@ -31,10 +33,10 @@ function Header() {
             className="font-medium hover:text-yellow-300 transition-colors duration-200 relative group"
           >
             Dashboard
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 group-hover:w-full transition-all duration-200"></span>
-          </Link>
-        </nav>
-      </div>
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 group-hover:w-full transition-all duration-200"></span>
+        </Link>
+      </nav>
+      </PageContainer>
     </header>
   );
 }
