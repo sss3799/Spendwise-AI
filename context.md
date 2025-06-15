@@ -2,50 +2,56 @@
 
 ## 🧠 Project Summary
 
-**Spendwise-AI** is a solo-developed React-based web application that lets users upload financial statements (PDFs, Excels, CSVs) and get visual + AI-powered insights from their data.
+**Spendwise-AI** is a solo-developed React web app deployed on Vercel:  
+🔗 [https://spendwise-ai-beta.vercel.app](https://spendwise-ai-beta.vercel.app)
 
-The goal is to help small businesses, individuals, and financial advisors understand:
-- Where they’re spending money
-- Which categories are costing more
-- What insights can help optimize financial decisions
-
-This MVP focuses on the **frontend only**. All data and insights are mocked for now.
+It enables users to upload financial documents (PDFs, Excels, CSVs) and visualize spending insights using AI-style summaries and charts. All backend logic is mocked for now.
 
 ---
 
 ## 👤 Target Users
 
-- Individual investors
 - Small business owners
-- Financial analysts
-- Freelancers and consultants
+- Individual investors
+- Financial consultants
+- Freelancers managing expenses
 
 ---
 
-## 🔧 Tech Stack (Frontend Only)
-
-- **Framework**: React (with functional components + hooks)
-- **Styling**: Tailwind CSS
-- **Routing**: React Router DOM
-- **Charts**: Recharts
-- **File Upload**: Drag-and-drop UI (mocked — no backend parsing yet)
-
----
-
-## 📦 Core UI Features (MVP)
+## ✅ MVP Features (Frontend Only)
 
 | Feature | Description |
 |--------|-------------|
-| ✅ Landing Page | Welcome header, example charts, and a CTA to upload |
-| ✅ File Upload UI | Drag/drop or select PDFs, CSVs, Excels (stored in state only) |
-| ✅ Dashboard View | Post-upload mock insights, filters, and interactive charts |
-| ✅ View Toggle | Switch between Aggregated vs Individual analysis views |
-| ✅ Category Filters | Filter insights by spend category |
-| ✅ AI Insight Cards | Text-like insights (e.g. “Marketing spend increased 20%”) |
+| ✅ Landing page | Hero section with intro, sample insights, CTA to upload |
+| ✅ File upload section | Drag-and-drop + file list preview |
+| ✅ Dashboard | Interactive insights, charts, filters |
+| ✅ View toggle | Aggregated vs individual toggle |
+| ✅ Category filters | Filter spend view by categories |
+| ✅ Mock AI insight cards | Static insights displayed in styled cards |
 
 ---
 
-## 🧪 Sample Data in `constants.js`
+## 🔧 Tech Stack
+
+- React (via Vite)
+- Tailwind CSS
+- [shadcn/ui](https://ui.shadcn.com) for polished components
+- Recharts for data visualizations
+- Framer Motion for simple UI transitions
+- Heroicons for icons
+
+---
+
+## 🌐 Deployment
+
+The live preview is hosted on Vercel:
+🔗 https://spendwise-ai-beta.vercel.app/
+
+Use this deployment link as a visual reference to align code generation and style suggestions. Codex/Cursor should inspect the live layout and UI states when responding.
+
+---
+
+## 📦 Data Mocked in `constants.js`
 
 ```js
 export const MOCK_EXPENSE_DATA = [
@@ -64,4 +70,38 @@ export const MOCK_INSIGHTS = [
   "💡 Travel reduced by 22% in Feb.",
   "⚠️ Marketing spend increased by 25% over Jan.",
 ];
-```
+
+🛠️ Project Structure
+css
+Copy
+Edit
+src/
+├── components/
+│   ├── FileUploader.jsx
+│   ├── ChartPanel.jsx
+│   ├── InsightCard.jsx
+│   ├── ToggleView.jsx
+│   └── FilterDropdown.jsx
+├── pages/
+│   ├── Landing.jsx
+│   └── Dashboard.jsx
+├── constants.js
+├── App.jsx
+└── index.js
+
+🧪 UI Behavior (Live Preview)
+Visit spendwise-ai-beta.vercel.app to:
+
+Observe layout spacing, padding, and interactivity
+
+Match component colors and behavior
+
+Preview chart positioning, toggles, and filters
+
+
+🚧 Current Status
+Fully static frontend deployed on Vercel
+
+Backend, parsing, and AI features not implemented yet
+
+All data flows mocked
