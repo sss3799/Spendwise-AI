@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import ToggleView from "../components/ToggleView";
 import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
-import PageContainer from "../components/PageContainer";
+import LoadingIndicator from "../components/LoadingIndicator";
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
 
-
-function Dashboard() {
-  const { isProcessed } = useProcess();
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+          <LoadingIndicator />
     const t = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(t);
   }, []);
@@ -35,11 +33,13 @@ function Dashboard() {
           </div>
         ) : (
           <>
-            <section className="mb-6">
+            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 flex-wrap">
               <ToggleView />
-            </section>
-            <section className="grid md:grid-cols-2 gap-6 py-12">
-              <ChartPanel type="donut" />
+              <FilterDropdown onSelect={setFilter} />
+              <ExportButton />
+            </div>
+            <div className="mt-6 grid md:grid-cols-2 gap-6">
+              <ChartPanel type="donut" category={filter} />
               <ChartPanel type="bar" />
             </section>
             <section className="grid md:grid-cols-3 gap-6 py-12">

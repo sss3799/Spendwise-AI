@@ -3,7 +3,7 @@ import FileUploader from "../components/FileUploader";
 import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
-import PageContainer from "../components/PageContainer";
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
 
 function Home() {
   const navigate = useNavigate();
