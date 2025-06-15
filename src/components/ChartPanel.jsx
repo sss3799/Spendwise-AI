@@ -20,8 +20,6 @@ function ChartPanel({ type }) {
   if (type === "donut") {
     return (
 
-      <div className="h-64 p-6 rounded-2xl shadow-lg bg-white/70 backdrop-blur-md">
-
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie dataKey="value" data={dataPie} innerRadius={40} outerRadius={80}>

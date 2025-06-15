@@ -166,7 +166,6 @@ function Home() {
               See What SpendWiseAI Can Do
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-
               <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
 
                 <ChartPanel type="bar" />
