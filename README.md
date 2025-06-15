@@ -45,3 +45,9 @@ To ensure AI helpers understand their role:
    git clone https://github.com/syed0711/Spendwise-AI.git
    cd Spendwise-AI
    npm install
+```
+2. **Run the Dev Server**
+```bash
+npm start
+```
+The project targets **Node.js 18+**. Ensure your local environment is updated.
