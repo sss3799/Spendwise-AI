@@ -32,9 +32,11 @@ function FileUploader() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 w-full max-w-md mx-auto">
       <div
-        className={`relative flex flex-col items-center justify-center p-8 border-2 border-dashed rounded-xl cursor-pointer transition-colors duration-200 ${dragging ? "border-blue-500 bg-blue-50" : "border-gray-300 bg-white hover:border-blue-400"}`}
+        className={`relative flex flex-col items-center justify-center gap-4 p-10 border-4 border-dashed rounded-3xl cursor-pointer shadow-lg transition-colors duration-200 ${
+          dragging ? "border-blue-500 bg-blue-50/50" : "border-gray-300 bg-white/70 backdrop-blur-md hover:border-blue-400"
+        }`}
         onClick={openFileDialog}
         onDragOver={(e) => {
           e.preventDefault();
@@ -50,9 +52,9 @@ function FileUploader() {
           onChange={onChange}
           className="hidden"
         />
-        <ArrowUpTrayIcon className="w-12 h-12 text-gray-400 mb-2" />
-        <p className="text-gray-600">
-          Drag & drop files here or <span className="text-blue-500 underline">browse</span>
+        <ArrowUpTrayIcon className="w-14 h-14 text-blue-500" />
+        <p className="text-gray-700 font-medium">
+          Drag & drop files here or <span className="text-blue-600 underline">browse</span>
         </p>
       </div>
       {files.length > 0 && (
