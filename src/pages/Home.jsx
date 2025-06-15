@@ -4,15 +4,20 @@ import FileUploader from "../components/FileUploader";
 import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
-import { useProcess } from "../context/ProcessContext";
+import PageContainer from "../components/PageContainer";
 
 function Home() {
   const navigate = useNavigate();
   const [processing, setProcessing] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
   const { setIsProcessed } = useProcess();
 
   const handleProcess = () => {
     if (processing) return;
+    if (uploadedFiles.length === 0) {
+      alert("Please upload a file before processing.");
+      return;
+    }
     setProcessing(true);
     setTimeout(() => {
       setProcessing(false);
@@ -107,16 +112,18 @@ function Home() {
               </p>
 
               {/* File Upload Section */}
-              <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Get Started</h3>
-                <FileUploader />
-                <div className="text-center mt-6">
-                  <button
-                    onClick={handleProcess}
-                    className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block disabled:opacity-60"
-                  >
-                    {processing ? "Processing..." : "Process Files →"}
-                  </button>
+              <div className="flex justify-center">
+                <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Get Started</h3>
+                    <FileUploader onFilesChange={setUploadedFiles} />
+                    <div className="text-center mt-6">
+                      <button
+                        onClick={handleProcess}
+                        className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
+                      >
+                        Process Files →
+                      </button>
+                    </div>
                 </div>
               </div>
 
