@@ -54,6 +54,7 @@ function Dashboard() {
             </div>
           </>
         )}
+      </main>
     </div>
   );
 }
