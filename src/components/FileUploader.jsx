@@ -1,16 +1,22 @@
 import React, { useCallback, useRef, useState } from "react";
 import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import { useProcess } from "../context/ProcessContext";
 
 function FileUploader() {
   const [files, setFiles] = useState([]);
   const [dragging, setDragging] = useState(false);
   const inputRef = useRef(null);
+  const { setIsProcessed } = useProcess();
 
-  const handleFiles = useCallback((filesList) => {
-    const selected = Array.from(filesList);
-    setFiles((prev) => [...prev, ...selected]);
-  }, []);
+  const handleFiles = useCallback(
+    (filesList) => {
+      const selected = Array.from(filesList);
+      setFiles((prev) => [...prev, ...selected]);
+      setIsProcessed(false);
+    },
+    [setIsProcessed]
+  );
 
   const onChange = useCallback(
     (e) => {

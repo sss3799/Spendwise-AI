@@ -4,12 +4,25 @@ import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
 import PageContainer from "../components/PageContainer";
 
+
 function Dashboard() {
+  const { isProcessed } = useProcess();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(t);
   }, []);
+
+  if (!isProcessed) {
+    return (
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
+        <Header />
+        <main className="flex-grow flex items-center justify-center p-6">
+          <p className="text-lg text-gray-700">Please upload files</p>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <PageContainer className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">

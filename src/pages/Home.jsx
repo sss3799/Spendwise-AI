@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FileUploader from "../components/FileUploader";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 import PageContainer from "../components/PageContainer";
@@ -8,12 +8,14 @@ import PageContainer from "../components/PageContainer";
 function Home() {
   const navigate = useNavigate();
   const [processing, setProcessing] = useState(false);
+  const { setIsProcessed } = useProcess();
 
   const handleProcess = () => {
     if (processing) return;
     setProcessing(true);
     setTimeout(() => {
       setProcessing(false);
+      setIsProcessed(true);
       navigate("/dashboard");
     }, 2000);
   };

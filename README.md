@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Spendwise-AI Frontend (React) — README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📖 Project Overview
+Spendwise-AI is a React-based frontend MVP for a financial insights dashboard. It displays mocked AI-style summaries and interactive visualizations of uploaded financial data (PDF, Excel, CSV). The backend parsing and real AI integration are not implemented yet; all data flows are mocked. The deployed preview is available at:  
+https://spendwise-ai-beta.vercel.app/
 
-## Available Scripts
+This README also serves to guide AI coding assistants (Codex, Cursor, etc.) that work on this codebase: they should treat the existing code as the base, apply incremental improvements, and explore new ideas from the web while preserving the core structure.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🎯 Purpose & Scope
+- **Frontend-only MVP**: Focus on React components, Tailwind CSS styling, shadcn/ui components, Recharts charts, Framer Motion animations.
+- **Mock data**: Use `constants.js` for placeholder expense data, chart data, and insight strings.
+- **No backend logic**: File upload UI is mocked; no actual parsing or API calls occur.
+- **User flows**: Landing with sample visuals, file upload area (mocked), dashboard with toggles (Aggregated vs Individual), filters, chart panels, and insight cards.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🤖 AI Assistant Guidelines
+To ensure AI helpers understand their role:
+1. **Modify, don’t recreate**: When asked to generate or update code, integrate changes into existing files/components rather than scaffolding an entirely new project. Respect the current file structure and styles.
+2. **Refer to live UI**: The deployed URL (https://spendwise-ai-beta.vercel.app/) reflects the present layout and styling. AI should inspect it (visually) and produce code that aligns with or improves upon it.
+3. **Leverage context files**: Use `context.md` and `agents.md` in repository root. They describe project goals, tech stack, component conventions, and design patterns. AI should read those to maintain consistency.
+4. **Experiment and innovate**: AI may suggest modern UI patterns or libraries found in the wild (from web research), but integrate them into the existing architecture. Proposals should be incremental and documented (e.g., adding a new component for a UX improvement).
+5. **Consistent styling**: All UI changes must follow Tailwind CSS utilities and shadcn/ui conventions (rounded corners, shadows, spacing). Use Heroicons and Framer Motion for icons and subtle animations.
+6. **Component-first approach**: When adding features, break them into reusable React components under `src/components/`. Do not lump code into large files.
+7. **Responsiveness and accessibility**: Any updates should keep mobile-first responsive design and basic a11y (semantic elements, aria-labels, contrast).
+8. **Testing changes locally**: After generating code, test against local dev server to ensure no regressions in layout or functionality. Use the live deployment as visual reference.
+9. **Document changes**: When AI adds or modifies code, include comments explaining intent, especially for more advanced patterns or unfamiliar libraries.
+10. **Version control etiquette**: Create branches or clear commit messages indicating the change purpose (e.g., `feat: improve file uploader drag-drop feedback`). Avoid rewriting existing history.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **components/**: Reusable UI pieces. Follow PascalCase filenames. Use shadcn/ui components inside.
+- **pages/**: High-level screens (Landing, Dashboard). Use React Router or conditional rendering.
+- **constants.js**: Mock data for charts and insights.
+- **context.md**: Global project context and guidelines.
+- **agents.md**: Instructions for AI assistants on how to modify and extend.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚀 Development & Local Testing
+1. **Clone & Install**  
+   ```bash
+   git clone https://github.com/syed0711/Spendwise-AI.git
+   cd Spendwise-AI
+   npm install
