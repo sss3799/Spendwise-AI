@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
 import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 import PageContainer from "../components/PageContainer";
-import { useProcess } from "../context/ProcessContext";
+import LoadingIndicator from "../components/LoadingIndicator";
 
 function Home() {
   const navigate = useNavigate();
@@ -28,13 +27,11 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow">
+    <>
         {/* Hero Section with Botanical Background */}
         <section className="min-h-screen relative bg-gradient-to-b from-slate-800 via-slate-700 to-slate-600 text-white overflow-hidden">
           {/* White Lotus Style Botanical Pattern */}
-          <div className="absolute inset-0 w-4/5 left-0 opacity-50 pointer-events-none">
+          <div className="absolute inset-0 w-4/5 left-0 opacity-40 pointer-events-none hidden md:block">
             {/* Large Tropical Leaves */}
             <svg className="absolute top-10 left-20 w-64 h-80 text-teal-600" viewBox="0 0 200 300" fill="currentColor">
               <path d="M100,20 Q120,40 140,80 Q130,120 120,160 Q110,200 100,240 Q90,200 80,160 Q70,120 60,80 Q80,40 100,20 Z" opacity="0.7"/>
@@ -105,7 +102,7 @@ function Home() {
           {/* Content Container */}
           <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-6">
             <div className="max-w-2xl w-full text-center">
-              <h1 className="text-5xl font-bold mb-6">
+              <h1 className="text-5xl font-bold mb-6 drop-shadow-md">
                 Welcome to <span className="text-yellow-300">SpendWiseAI</span>
               </h1>
               <p className="text-xl mb-12 leading-relaxed opacity-90">
@@ -117,13 +114,14 @@ function Home() {
                 <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8">
                   <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Get Started</h3>
                     <FileUploader onFilesChange={setUploadedFiles} />
-                    <div className="text-center mt-6">
+                    <div className="text-center mt-6 space-y-4">
                       <button
                         onClick={handleProcess}
                         className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
                       >
                         Process Files →
                       </button>
+                      {processing && <LoadingIndicator />}
                     </div>
                 </div>
               </div>
@@ -201,8 +199,7 @@ function Home() {
             </div>
           </div>
         </section>
-      </main>
-    </div>
+      </>
   );
 }
 

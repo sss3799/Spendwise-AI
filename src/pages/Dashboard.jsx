@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
 import ToggleView from "../components/ToggleView";
 import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
@@ -18,19 +17,14 @@ function Dashboard() {
 
   if (!isProcessed) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
-        <Header />
-        <main className="flex-grow flex items-center justify-center p-6">
-          <p className="text-lg text-gray-700">Please upload files</p>
-        </main>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white via-purple-50 to-pink-50 p-6">
+        <p className="text-lg text-gray-700">Please upload files</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
-      <Header />
-      <main className="flex-grow p-6 md:p-10">
+    <div className="min-h-screen bg-gradient-to-b from-white via-purple-50 to-pink-50 p-6 md:p-10">
         {loading ? (
           <div className="animate-pulse space-y-4">
             <div className="h-10 bg-gray-200 rounded" />
@@ -44,18 +38,19 @@ function Dashboard() {
               <FilterDropdown onSelect={setFilter} />
               <ExportButton />
             </div>
-            <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <h2 className="text-lg font-semibold mt-4 mb-2">Charts</h2>
+            <div className="grid md:grid-cols-2 gap-6">
               <ChartPanel type="donut" category={filter} />
               <ChartPanel type="bar" />
             </div>
-            <div className="mt-6 grid md:grid-cols-3 gap-4">
+            <h2 className="text-lg font-semibold mt-8 mb-2">Insights</h2>
+            <div className="grid md:grid-cols-3 gap-4">
               <InsightCard text="You overspent in Tech by 32%" />
               <InsightCard text="Marketing spend decreased 10%" />
               <InsightCard text="Travel costs stable" />
             </div>
           </>
         )}
-      </main>
     </div>
   );
 }
