@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 
 function Home() {
+  const navigate = useNavigate();
+  const [processing, setProcessing] = useState(false);
+
+  const handleProcess = () => {
+    if (processing) return;
+    setProcessing(true);
+    setTimeout(() => {
+      setProcessing(false);
+      navigate("/dashboard");
+    }, 2000);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -82,96 +94,65 @@ function Home() {
           </div>
           
           {/* Content Container */}
-          <div className="relative z-10 min-h-screen flex">
-            {/* Left Side - Brand Content */}
-            <div className="w-1/2 flex items-center justify-center p-12">
-              <div className="text-center max-w-lg">
-                <div className="mb-8">
-                  {/* Chart Icon with Nature-Inspired Design */}
-                  <div className="w-32 h-32 mx-auto mb-6 relative">
-                    <div className="absolute inset-0 bg-teal-100 rounded-full"></div>
-                    <div className="absolute inset-4 bg-teal-200 rounded-full"></div>
-                    <div className="absolute inset-8 bg-white rounded-full flex items-center justify-center shadow-lg">
-                      <svg className="w-12 h-12 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
+          <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-6">
+            <div className="max-w-2xl w-full text-center">
+              <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                Welcome to <span className="text-blue-600">SpendWiseAI</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+                Gain quick insights from your financial data with our intelligent analysis platform.
+              </p>
+
+              {/* File Upload Section */}
+              <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Get Started</h3>
+                <FileUploader />
+                <div className="text-center mt-6">
+                  <Link
+                    to="/dashboard"
+                    className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
+                  >
+                    Process Files →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Feature Cards */}
+              <div className="grid sm:grid-cols-3 gap-4 mt-12">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">✓</span>
                     </div>
+                    <span className="text-gray-700 font-medium">Expense Categorization</span>
                   </div>
                 </div>
-                
-                <h3 className="text-3xl font-bold text-gray-800 mb-4">Smart Financial Analytics</h3>
-                <p className="text-gray-600 text-lg max-w-md mx-auto leading-relaxed mb-12">
-                  Transform your financial data into actionable insights with AI-powered analysis
-                </p>
-                
-                {/* Feature Cards */}
-                <div className="space-y-4">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 text-left max-w-sm mx-auto transform hover:scale-105 transition-transform duration-300 shadow-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">✓</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">Expense Categorization</span>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">📊</span>
                     </div>
+                    <span className="text-gray-700 font-medium">Trend Analysis</span>
                   </div>
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 text-left max-w-sm mx-auto transform hover:scale-105 transition-transform duration-300 shadow-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">📊</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">Trend Analysis</span>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">💡</span>
                     </div>
-                  </div>
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 text-left max-w-sm mx-auto transform hover:scale-105 transition-transform duration-300 shadow-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">💡</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">Smart Recommendations</span>
-                    </div>
+                    <span className="text-gray-700 font-medium">Smart Recommendations</span>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Right Side - Welcome Content */}
-            <div className="w-1/2 flex items-center justify-center p-12">
-              <div className="max-w-lg w-full">
-                <div className="text-center mb-12">
-                  <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                    Welcome to <span className="text-blue-600">SpendWiseAI</span>
-                  </h1>
-                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Gain quick insights from your financial data with our intelligent analysis platform.
-                  </p>
+              {/* Quick Stats Preview */}
+              <div className="grid grid-cols-2 gap-4 mt-12">
+                <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
+                  <div className="text-2xl font-bold text-blue-600 mb-2">5+</div>
+                  <div className="text-sm text-gray-600">File Formats</div>
                 </div>
-                
-                {/* File Upload Section */}
-                <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-                    Get Started
-                  </h3>
-                  <FileUploader />
-                  <div className="text-center mt-6">
-                    <Link 
-                      to="/dashboard" 
-                      className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
-                    >
-                      Process Files →
-                    </Link>
-                  </div>
-                </div>
-                
-                {/* Quick Stats Preview */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">5+</div>
-                    <div className="text-sm text-gray-600">File Formats</div>
-                  </div>
-                  <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
-                    <div className="text-2xl font-bold text-green-600 mb-2">AI</div>
-                    <div className="text-sm text-gray-600">Powered Analysis</div>
-                  </div>
+                <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
+                  <div className="text-2xl font-bold text-green-600 mb-2">AI</div>
+                  <div className="text-sm text-gray-600">Powered Analysis</div>
                 </div>
               </div>
             </div>
@@ -186,16 +167,20 @@ function Home() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+
                 <ChartPanel type="bar" />
                 <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Visual Analytics</h3>
                 <p className="text-gray-600 text-sm text-center">Dynamic charts to visualize your spending patterns</p>
               </div>
 
+
               <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+
                 <ChartPanel type="donut" />
                 <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Smart Insights</h3>
                 <p className="text-gray-600 text-sm text-center">AI highlights your highest spending categories</p>
               </div>
+
 
               <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
                 <TrendChart />
