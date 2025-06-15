@@ -3,7 +3,7 @@ import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { useProcess } from "../context/ProcessContext";
 
-function FileUploader() {
+function FileUploader({ onFilesChange }) {
   const [files, setFiles] = useState([]);
   const [dragging, setDragging] = useState(false);
   const inputRef = useRef(null);
@@ -12,7 +12,13 @@ function FileUploader() {
   const handleFiles = useCallback(
     (filesList) => {
       const selected = Array.from(filesList);
-      setFiles((prev) => [...prev, ...selected]);
+      setFiles((prev) => {
+        const updated = [...prev, ...selected];
+        if (onFilesChange) {
+          onFilesChange(updated);
+        }
+        return updated;
+      });
       setIsProcessed(false);
     },
     [setIsProcessed]
