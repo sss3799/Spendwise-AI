@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 
 function Home() {
+  const navigate = useNavigate();
+  const [processing, setProcessing] = useState(false);
+
+  const handleProcess = () => {
+    if (processing) return;
+    setProcessing(true);
+    setTimeout(() => {
+      setProcessing(false);
+      navigate("/dashboard");
+    }, 2000);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -153,12 +165,13 @@ function Home() {
                   </h3>
                   <FileUploader />
                   <div className="text-center mt-6">
-                    <Link 
-                      to="/dashboard" 
-                      className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
+                    <button
+                      onClick={handleProcess}
+                      disabled={processing}
+                      className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block disabled:opacity-70"
                     >
-                      Process Files →
-                    </Link>
+                      {processing ? "Processing..." : "Process Files →"}
+                    </button>
                   </div>
                 </div>
                 
