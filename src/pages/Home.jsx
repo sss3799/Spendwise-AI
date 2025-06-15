@@ -113,13 +113,13 @@ function Home() {
 
               {/* File Upload Section */}
               <div className="flex justify-center">
-                <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Get Started</h3>
+                <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8">
+                  <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6 text-center">Get Started</h3>
                     <FileUploader onFilesChange={setUploadedFiles} />
                     <div className="text-center mt-6 space-y-4">
                       <button
                         onClick={handleProcess}
-                        className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
+                        className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-purple-700 dark:to-purple-900 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 dark:hover:from-purple-800 dark:hover:to-purple-950 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
                       >
                         Process Files →
                       </button>
@@ -130,40 +130,40 @@ function Home() {
 
               {/* Feature Cards */}
               <div className="grid sm:grid-cols-3 gap-4 mt-12">
-                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">✓</span>
                     </div>
-                    <span className="text-gray-700 font-medium">Expense Categorization</span>
+                    <span className="text-gray-700 dark:text-gray-200 font-medium">Expense Categorization</span>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">📊</span>
                     </div>
-                    <span className="text-gray-700 font-medium">Trend Analysis</span>
+                    <span className="text-gray-700 dark:text-gray-200 font-medium">Trend Analysis</span>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">💡</span>
                     </div>
-                    <span className="text-gray-700 font-medium">Smart Recommendations</span>
+                    <span className="text-gray-700 dark:text-gray-200 font-medium">Smart Recommendations</span>
                   </div>
                 </div>
               </div>
               {/* Quick Stats Preview */}
               <div className="grid grid-cols-2 gap-4 mt-12">
-                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
                   <div className="text-2xl font-bold text-blue-600 mb-2">5+</div>
-                  <div className="text-sm text-gray-600">File Formats</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">File Formats</div>
                 </div>
-                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
                   <div className="text-2xl font-bold text-green-600 mb-2">AI</div>
-                  <div className="text-sm text-gray-600">Powered Analysis</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Powered Analysis</div>
                 </div>
               </div>
             </div>
@@ -171,32 +171,32 @@ function Home() {
         </section>
         
         {/* Examples Section */}
-        <section className="py-20 bg-gradient-to-b from-white via-purple-50 to-pink-50" id="examples">
+        <section className="py-20 bg-gradient-to-b from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700" id="examples">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12">
               See What SpendWiseAI Can Do
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
 
                 <ChartPanel type="bar" />
-                <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Visual Analytics</h3>
-                <p className="text-gray-600 text-sm text-center">Dynamic charts to visualize your spending patterns</p>
+                <h3 className="font-semibold text-gray-800 dark:text-gray-100 mt-4 mb-2 text-center">Visual Analytics</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm text-center">Dynamic charts to visualize your spending patterns</p>
               </div>
 
 
-              <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
 
                 <ChartPanel type="donut" />
-                <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Smart Insights</h3>
-                <p className="text-gray-600 text-sm text-center">AI highlights your highest spending categories</p>
+                <h3 className="font-semibold text-gray-800 dark:text-gray-100 mt-4 mb-2 text-center">Smart Insights</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm text-center">AI highlights your highest spending categories</p>
               </div>
 
 
-              <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
                 <TrendChart />
-                <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Trend Analyzer</h3>
-                <p className="text-gray-600 text-sm text-center">See how your expenses change over time</p>
+                <h3 className="font-semibold text-gray-800 dark:text-gray-100 mt-4 mb-2 text-center">Trend Analyzer</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm text-center">See how your expenses change over time</p>
               </div>
             </div>
           </div>

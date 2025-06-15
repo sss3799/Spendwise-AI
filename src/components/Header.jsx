@@ -8,7 +8,7 @@ import { useProcess } from "../context/ProcessContext";
 function Header() {
   const { isProcessed } = useProcess();
   return (
-    <header className="bg-gradient-to-r from-slate-700 to-gray-800 text-white shadow">
+    <header className="bg-gradient-to-r from-slate-700 to-gray-800 dark:from-gray-900 dark:to-gray-950 text-white shadow">
       <PageContainer className="flex justify-between items-center py-4">
         {/* Left Corner - Logo */}
         <Link
