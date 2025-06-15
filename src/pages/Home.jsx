@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 
 function Home() {
+  const navigate = useNavigate();
+  const [processing, setProcessing] = useState(false);
+
+  const handleProcess = () => {
+    if (processing) return;
+    setProcessing(true);
+    setTimeout(() => {
+      setProcessing(false);
+      navigate("/dashboard");
+    }, 2000);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -132,6 +144,7 @@ function Home() {
                   </div>
                 </div>
               </div>
+
 
               {/* Quick Stats Preview */}
               <div className="grid grid-cols-2 gap-4 mt-12">
