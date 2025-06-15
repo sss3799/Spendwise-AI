@@ -23,7 +23,7 @@ function ChartPanel({ type, category = "All" }) {
         ? dataPie.filter((d) => d.name === category)
         : dataPie;
     return (
-      <div className="h-64 p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-md">
+      <div className="h-64 p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 backdrop-blur-md transition-colors">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie dataKey="value" data={filteredPie} innerRadius={40} outerRadius={80}>
@@ -40,7 +40,7 @@ function ChartPanel({ type, category = "All" }) {
 
   return (
 
-    <div className="h-64 p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-md">
+    <div className="h-64 p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 backdrop-blur-md transition-colors">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={dataBar}>
           <defs>

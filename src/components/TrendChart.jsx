@@ -10,7 +10,7 @@ const data = [
 
 function TrendChart() {
   return (
-    <div className="h-48 p-4 rounded-2xl shadow-lg bg-white/70 backdrop-blur-md">
+    <div className="h-48 p-4 rounded-2xl shadow-lg bg-white/70 dark:bg-gray-700/70 backdrop-blur-md transition-colors">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <defs>

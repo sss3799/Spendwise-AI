@@ -53,7 +53,9 @@ function FileUploader({ onFilesChange }) {
     >
       <div
         className={`relative flex flex-col items-center justify-center gap-4 p-10 border-4 border-dashed rounded-3xl cursor-pointer shadow-lg transition-colors duration-200 ${
-          dragging ? "border-purple-500 bg-purple-50/50" : "border-gray-300 bg-gradient-to-br from-purple-50 to-pink-50 backdrop-blur-md hover:border-purple-400"
+          dragging
+            ? "border-purple-500 bg-purple-50/50 dark:bg-gray-700/50"
+            : "border-gray-300 dark:border-gray-600 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 backdrop-blur-md hover:border-purple-400"
         }`}
         onClick={openFileDialog}
         onDragOver={(e) => {
@@ -71,7 +73,7 @@ function FileUploader({ onFilesChange }) {
           className="hidden"
         />
         <ArrowUpTrayIcon className="w-14 h-14 text-purple-500" />
-        <p className="text-gray-700 font-medium">
+        <p className="text-gray-700 dark:text-gray-200 font-medium">
           Drag & drop files here or <span className="text-purple-600 underline">browse</span>
         </p>
       </div>
