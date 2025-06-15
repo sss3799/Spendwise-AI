@@ -179,25 +179,30 @@ function Home() {
         </section>
         
         {/* Examples Section */}
-        <section className="py-20 bg-stone-50" id="examples">
+        <section className="py-20 bg-gradient-to-b from-white via-stone-50 to-stone-100" id="examples">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
               See What SpendWiseAI Can Do
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+              <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+
                 <ChartPanel type="bar" />
                 <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Visual Analytics</h3>
                 <p className="text-gray-600 text-sm text-center">Dynamic charts to visualize your spending patterns</p>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+              <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+
                 <ChartPanel type="donut" />
                 <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Smart Insights</h3>
                 <p className="text-gray-600 text-sm text-center">AI highlights your highest spending categories</p>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+              <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
                 <TrendChart />
                 <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Trend Analyzer</h3>
                 <p className="text-gray-600 text-sm text-center">See how your expenses change over time</p>
