@@ -31,7 +31,7 @@ function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* Hero Section with Botanical Background */}
-        <section className="min-h-screen relative bg-gradient-to-b from-slate-800 via-slate-700 to-slate-600 text-white overflow-hidden">
+        <section className="min-h-screen relative bg-gradient-to-b from-slate-800 via-slate-700 to-slate-600 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 text-white overflow-hidden">
           {/* White Lotus Style Botanical Pattern */}
           <div className="absolute inset-0 w-4/5 left-0 opacity-40 pointer-events-none hidden md:block">
             {/* Large Tropical Leaves */}
