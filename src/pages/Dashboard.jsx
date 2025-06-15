@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import ToggleView from "../components/ToggleView";
 import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
+import ExportButton from "../components/ExportButton";
 import { useProcess } from "../context/ProcessContext";
 
 function Dashboard() {
@@ -36,8 +37,9 @@ function Dashboard() {
           </div>
         ) : (
           <>
-            <div className="mb-6">
+            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <ToggleView />
+              <ExportButton />
             </div>
             <div className="mt-6 grid md:grid-cols-2 gap-6">
               <ChartPanel type="donut" />
