@@ -1,18 +1,19 @@
 import React from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
+import { MOCK_EXPENSE_DATA, MOCK_CHART_DATA } from "../constants";
 
-const dataPie = [
-  { name: "Marketing", value: 400 },
-  { name: "Travel", value: 300 },
-  { name: "Tech", value: 300 },
-];
-
-const dataBar = [
-  { name: "Jan", value: 400 },
-  { name: "Feb", value: 300 },
-  { name: "Mar", value: 500 },
-  { name: "Apr", value: 200 },
-];
+const dataPie = MOCK_EXPENSE_DATA.map((d) => ({ name: d.category, value: d.amount }));
+const dataBar = MOCK_CHART_DATA.map((d) => ({ name: d.month, value: d.Marketing + d.Travel + d.Tech }));
 
 const COLORS = ["#60a5fa", "#10b981", "#facc15"];
 

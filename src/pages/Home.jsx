@@ -6,12 +6,18 @@ import TrendChart from "../components/TrendChart";
 import { useProcess } from "../context/ProcessContext";
 import PageContainer from "../components/PageContainer";
 import LoadingIndicator from "../components/LoadingIndicator";
+import InsightCard from "../components/InsightCard";
+import { MOCK_INSIGHTS } from "../constants";
 
 function Home() {
   const navigate = useNavigate();
   const [processing, setProcessing] = useState(false);
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const { setIsProcessed } = useProcess();
+
+  const handleScrollToUpload = () => {
+    document.getElementById("upload-section")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleProcess = () => {
     if (processing) return;
@@ -107,12 +113,18 @@ function Home() {
               <h1 className="text-5xl font-bold mb-6 drop-shadow-md">
                 Welcome to <span className="text-yellow-300">SpendWiseAI</span>
               </h1>
-              <p className="text-xl mb-12 leading-relaxed opacity-90">
+              <p className="text-xl mb-6 leading-relaxed opacity-90">
                 Gain quick insights from your financial data with our intelligent analysis platform.
               </p>
+              <button
+                onClick={handleScrollToUpload}
+                className="mb-12 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl shadow inline-flex items-center justify-center"
+              >
+                Upload Your Financial Files
+              </button>
 
               {/* File Upload Section */}
-              <div className="flex justify-center">
+              <div className="flex justify-center" id="upload-section">
                 <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8">
                   <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6 text-center">Get Started</h3>
                     <FileUploader onFilesChange={setUploadedFiles} />
@@ -198,6 +210,11 @@ function Home() {
                 <h3 className="font-semibold text-gray-800 dark:text-gray-100 mt-4 mb-2 text-center">Trend Analyzer</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm text-center">See how your expenses change over time</p>
               </div>
+            </div>
+            <div className="grid md:grid-cols-3 gap-4 mt-10">
+              {MOCK_INSIGHTS.map((insight) => (
+                <InsightCard key={insight} text={insight} />
+              ))}
             </div>
           </div>
         </section>
