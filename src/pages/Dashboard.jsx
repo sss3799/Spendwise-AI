@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
+import Header from "../components/Header";
 import ToggleView from "../components/ToggleView";
 import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
-import LoadingIndicator from "../components/LoadingIndicator";
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+import ExportButton from "../components/ExportButton";
+import FilterDropdown from "../components/FilterDropdown";
+import { useProcess } from "../context/ProcessContext";
 
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
-          <LoadingIndicator />
+function Dashboard() {
+  const { isProcessed } = useProcess();
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("All");
+  useEffect(() => {
     const t = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(t);
   }, []);
@@ -23,8 +28,9 @@ import LoadingIndicator from "../components/LoadingIndicator";
   }
 
   return (
-    <PageContainer className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
-      <main className="flex-grow py-12">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
+      <Header />
+      <main className="flex-grow p-6 md:p-10">
         {loading ? (
           <div className="animate-pulse space-y-4">
             <div className="h-10 bg-gray-200 rounded" />
@@ -41,16 +47,16 @@ import LoadingIndicator from "../components/LoadingIndicator";
             <div className="mt-6 grid md:grid-cols-2 gap-6">
               <ChartPanel type="donut" category={filter} />
               <ChartPanel type="bar" />
-            </section>
-            <section className="grid md:grid-cols-3 gap-6 py-12">
+            </div>
+            <div className="mt-6 grid md:grid-cols-3 gap-4">
               <InsightCard text="You overspent in Tech by 32%" />
               <InsightCard text="Marketing spend decreased 10%" />
               <InsightCard text="Travel costs stable" />
-            </section>
+            </div>
           </>
         )}
       </main>
-    </PageContainer>
+    </div>
   );
 }
 
