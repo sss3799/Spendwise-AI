@@ -5,7 +5,6 @@ import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
 import PageContainer from "../components/PageContainer";
 import LoadingIndicator from "../components/LoadingIndicator";
-import { useProcess } from "../context/ProcessContext";
 
 function Home() {
   const navigate = useNavigate();
