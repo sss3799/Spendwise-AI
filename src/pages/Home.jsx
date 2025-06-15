@@ -185,17 +185,22 @@ function Home() {
               See What SpendWiseAI Can Do
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
+
               <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+
                 <ChartPanel type="bar" />
                 <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Visual Analytics</h3>
                 <p className="text-gray-600 text-sm text-center">Dynamic charts to visualize your spending patterns</p>
               </div>
 
+
               <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+
                 <ChartPanel type="donut" />
                 <h3 className="font-semibold text-gray-800 mt-4 mb-2 text-center">Smart Insights</h3>
                 <p className="text-gray-600 text-sm text-center">AI highlights your highest spending categories</p>
               </div>
+
 
               <div className="bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
                 <TrendChart />
