@@ -144,8 +144,6 @@ function Home() {
                   </div>
                 </div>
               </div>
-
-
               {/* Quick Stats Preview */}
               <div className="grid grid-cols-2 gap-4 mt-12">
                 <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
