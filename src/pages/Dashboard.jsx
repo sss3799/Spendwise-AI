@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
 import ToggleView from "../components/ToggleView";
 import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
@@ -19,7 +18,6 @@ function Dashboard() {
   if (!isProcessed) {
     return (
       <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
-        <Header />
         <main className="flex-grow flex items-center justify-center p-6">
           <p className="text-lg text-gray-700">Please upload files</p>
         </main>
@@ -29,7 +27,6 @@ function Dashboard() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
-      <Header />
       <main className="flex-grow p-6 md:p-10">
         {loading ? (
           <div className="animate-pulse space-y-4">

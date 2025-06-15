@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import FileUploader from "../components/FileUploader";
 import { useNavigate } from "react-router-dom";
 import ChartPanel from "../components/ChartPanel";
 import TrendChart from "../components/TrendChart";
-import PageContainer from "../components/PageContainer";
+import { useProcess } from "../context/ProcessContext";
 
 function Home() {
   const navigate = useNavigate();
@@ -28,7 +27,6 @@ function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <main className="flex-grow">
         {/* Hero Section with Botanical Background */}
         <section className="min-h-screen relative bg-gradient-to-b from-slate-800 via-slate-700 to-slate-600 text-white overflow-hidden">
