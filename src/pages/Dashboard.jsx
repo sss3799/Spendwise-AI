@@ -17,14 +17,17 @@ function Dashboard() {
 
   if (!isProcessed) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white via-purple-50 to-pink-50 p-6">
-        <p className="text-lg text-gray-700">Please upload files</p>
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
+        <main className="flex-grow flex items-center justify-center p-6">
+          <p className="text-lg text-gray-700">Please upload files</p>
+        </main>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-purple-50 to-pink-50 p-6 md:p-10">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-purple-50 to-pink-50">
+      <main className="flex-grow p-6 md:p-10">
         {loading ? (
           <div className="animate-pulse space-y-4">
             <div className="h-10 bg-gray-200 rounded" />
