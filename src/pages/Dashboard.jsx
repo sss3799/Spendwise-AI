@@ -4,11 +4,13 @@ import ToggleView from "../components/ToggleView";
 import ChartPanel from "../components/ChartPanel";
 import InsightCard from "../components/InsightCard";
 import ExportButton from "../components/ExportButton";
+import FilterDropdown from "../components/FilterDropdown";
 import { useProcess } from "../context/ProcessContext";
 
 function Dashboard() {
   const { isProcessed } = useProcess();
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("All");
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(t);
@@ -37,12 +39,13 @@ function Dashboard() {
           </div>
         ) : (
           <>
-            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 flex-wrap">
               <ToggleView />
+              <FilterDropdown onSelect={setFilter} />
               <ExportButton />
             </div>
             <div className="mt-6 grid md:grid-cols-2 gap-6">
-              <ChartPanel type="donut" />
+              <ChartPanel type="donut" category={filter} />
               <ChartPanel type="bar" />
             </div>
             <div className="mt-6 grid md:grid-cols-3 gap-4">

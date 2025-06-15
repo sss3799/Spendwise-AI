@@ -16,7 +16,8 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.0",
-    "recharts": "^2.8.0"
+    "recharts": "^2.8.0",
+    "@radix-ui/react-dropdown-menu": "^2.1.15"
   },
   "scripts": {
     "start": "react-scripts start",

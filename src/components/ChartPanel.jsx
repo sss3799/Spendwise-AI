@@ -16,14 +16,18 @@ const dataBar = [
 
 const COLORS = ["#60a5fa", "#10b981", "#facc15"];
 
-function ChartPanel({ type }) {
+function ChartPanel({ type, category = "All" }) {
   if (type === "donut") {
+    const filteredPie =
+      category && category !== "All"
+        ? dataPie.filter((d) => d.name === category)
+        : dataPie;
     return (
       <div className="h-64 p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-md">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
-            <Pie dataKey="value" data={dataPie} innerRadius={40} outerRadius={80}>
-              {dataPie.map((entry, index) => (
+            <Pie dataKey="value" data={filteredPie} innerRadius={40} outerRadius={80}>
+              {filteredPie.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
