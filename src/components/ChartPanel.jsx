@@ -19,7 +19,7 @@ const COLORS = ["#60a5fa", "#10b981", "#facc15"];
 function ChartPanel({ type }) {
   if (type === "donut") {
     return (
-      <div className="h-64 p-6 rounded-2xl shadow-lg bg-white/70 backdrop-blur-md">
+      <div className="h-64 p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-md">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie dataKey="value" data={dataPie} innerRadius={40} outerRadius={80}>
@@ -36,7 +36,7 @@ function ChartPanel({ type }) {
 
   return (
 
-    <div className="h-64 p-6 rounded-2xl shadow-lg bg-white/70 backdrop-blur-md">
+    <div className="h-64 p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-md">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={dataBar}>
           <defs>
