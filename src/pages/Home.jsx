@@ -23,7 +23,7 @@ function Home() {
       <Header />
       <main className="flex-grow">
         {/* Hero Section with Botanical Background */}
-        <section className="min-h-screen relative bg-gradient-to-b from-purple-600 via-fuchsia-600 to-pink-500 text-white overflow-hidden">
+        <section className="min-h-screen relative bg-gradient-to-b from-slate-800 via-slate-700 to-slate-600 text-white overflow-hidden">
           {/* White Lotus Style Botanical Pattern */}
           <div className="absolute inset-0 w-4/5 left-0 opacity-50 pointer-events-none">
             {/* Large Tropical Leaves */}
@@ -110,7 +110,7 @@ function Home() {
                 <div className="text-center mt-6">
                   <Link
                     to="/dashboard"
-                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-pink-600 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
+                    className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
                   >
                     Process Files →
                   </Link>
