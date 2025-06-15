@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function ToggleView() {
   const [view, setView] = useState("aggregated");
@@ -6,13 +7,13 @@ function ToggleView() {
     <div className="flex items-center space-x-4">
       <span className={view === "aggregated" ? "font-semibold" : ""}>Aggregated View</span>
       <button
-        className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
         onClick={() => setView(view === "aggregated" ? "individual" : "aggregated")}
       >
-        <span
-          className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-            view === "aggregated" ? "translate-x-1" : "translate-x-6"
-          }`}
+        <motion.span
+          className="inline-block h-4 w-4 rounded-full bg-white"
+          animate={{ x: view === "aggregated" ? 4 : 24 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         />
       </button>
       <span className={view === "individual" ? "font-semibold" : ""}>Individual View</span>

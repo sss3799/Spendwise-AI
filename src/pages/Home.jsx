@@ -23,7 +23,7 @@ function Home() {
       <Header />
       <main className="flex-grow">
         {/* Hero Section with Botanical Background */}
-        <section className="min-h-screen relative bg-stone-50 overflow-hidden">
+        <section className="min-h-screen relative bg-gradient-to-b from-purple-600 via-fuchsia-600 to-pink-500 text-white overflow-hidden">
           {/* White Lotus Style Botanical Pattern */}
           <div className="absolute inset-0 w-4/5 left-0 opacity-50 pointer-events-none">
             {/* Large Tropical Leaves */}
@@ -96,10 +96,10 @@ function Home() {
           {/* Content Container */}
           <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-6">
             <div className="max-w-2xl w-full text-center">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Welcome to <span className="text-blue-600">SpendWiseAI</span>
+              <h1 className="text-5xl font-bold mb-6">
+                Welcome to <span className="text-yellow-300">SpendWiseAI</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+              <p className="text-xl mb-12 leading-relaxed opacity-90">
                 Gain quick insights from your financial data with our intelligent analysis platform.
               </p>
 
@@ -110,7 +110,7 @@ function Home() {
                 <div className="text-center mt-6">
                   <Link
                     to="/dashboard"
-                    className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
+                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-pink-600 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block"
                   >
                     Process Files →
                   </Link>
@@ -119,7 +119,7 @@ function Home() {
 
               {/* Feature Cards */}
               <div className="grid sm:grid-cols-3 gap-4 mt-12">
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">✓</span>
@@ -127,7 +127,7 @@ function Home() {
                     <span className="text-gray-700 font-medium">Expense Categorization</span>
                   </div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">📊</span>
@@ -135,7 +135,7 @@ function Home() {
                     <span className="text-gray-700 font-medium">Trend Analysis</span>
                   </div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-transform duration-300 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">💡</span>
@@ -146,11 +146,11 @@ function Home() {
               </div>
               {/* Quick Stats Preview */}
               <div className="grid grid-cols-2 gap-4 mt-12">
-                <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
                   <div className="text-2xl font-bold text-blue-600 mb-2">5+</div>
                   <div className="text-sm text-gray-600">File Formats</div>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-gradient-to-br from-white via-purple-50 to-pink-50 rounded-xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
                   <div className="text-2xl font-bold text-green-600 mb-2">AI</div>
                   <div className="text-sm text-gray-600">Powered Analysis</div>
                 </div>
@@ -160,7 +160,7 @@ function Home() {
         </section>
         
         {/* Examples Section */}
-        <section className="py-20 bg-gradient-to-b from-white via-stone-50 to-stone-100" id="examples">
+        <section className="py-20 bg-gradient-to-b from-white via-purple-50 to-pink-50" id="examples">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
               See What SpendWiseAI Can Do
